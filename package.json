@@ -2,10 +2,12 @@
   "name": "lazy-gallery",
   "version": "0.0.1",
   "description": "Gallery of lazy loaded images",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "transpile": "babel src -d dist --copy-files",
+    "prepublishOnly": "npm run transpile"
   },
   "keywords": [
     "lazy",
@@ -14,6 +16,10 @@
   ],
   "author": "vooogieJames",
   "license": "ISC",
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
